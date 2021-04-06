@@ -1,4 +1,6 @@
 const Discord = require("discord.js")
+const config = require("./secrets.json");
+
 const client = new Discord.Client()
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`)
@@ -8,7 +10,7 @@ client.on("message", msg => {
     hitos_roll(msg);
   }
 })
-client.login("NzIzMTMwMTk1NTM1NzI0NjQ2.XutJ6g.VlYXp-PkCKGzyraNYjtDSAuaN18")
+client.login(config.BOT_TOKEN)
 
 function getRandomInt(min, max) {
     min = Math.ceil(min);
